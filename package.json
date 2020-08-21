@@ -4,7 +4,11 @@
   "description": "this is build for  practice and major in newton school",
   "main": "index.js",
   "scripts": {
-    "serverStart": "nodemon index.js"
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm install-client && npm run build",
+    "start": "nodemon index.js",
+    "client": "cd client && npm start"
   },
   "author": "zabid ali",
   "license": "ISC",

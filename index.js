@@ -8,7 +8,7 @@ const articles = require("./server/routes/articles");
 const app = express();
 
 require("dotenv").config();
-const { NODE_PORT, DATABASE_URL } = process.env;
+const { NODE_PORT, DATABASE_URL, NODE_ENV } = process.env;
 
 const PORT = NODE_PORT || 8000;
 
@@ -24,6 +24,13 @@ app.use("/uploads", express.static("./server/uploads"));
 app.use(express.static(path.join(__dirname, "/client/build")));
 app.use("/blogs", articles);
 //app.use("/blogs/files", fileRoutes);
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
+
+if (NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 mongoose
   .connect(DATABASE_URL, {
