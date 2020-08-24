@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node ./index.js",
     "startdev": "nodemon ./index.js",
-    "heroku-postbuild": "cd client && npm && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "zabid ali",
   "license": "ISC",

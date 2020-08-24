@@ -28,12 +28,12 @@ app.use(express.static("client/build"));
 
 app.use("/blogs", articles);
 //app.use("/blogs/files", fileRoutes);
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
-});
 
 if (NODE_ENV === "production") {
   app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  });
 }
 
 mongoose
