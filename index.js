@@ -20,7 +20,7 @@ app.use(
 );
 
 app.use(cors());
-app.use(express.static(path.join(__dirname, "/client/build")));
+app.use(express.static(path.join(__dirname, "/client/build"))); //neded to be changed
 
 app.use("/uploads", express.static("./server/uploads"));
 
