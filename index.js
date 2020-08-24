@@ -10,7 +10,7 @@ const app = express();
 require("dotenv").config();
 const { NODE_PORT, DATABASE_URL, NODE_ENV } = process.env;
 
-const PORT = NODE_PORT || 8000;
+const PORT = process.env.PORT || NODE_PORT || 8000;
 
 app.use(bodyParser.json());
 app.use(
@@ -20,8 +20,12 @@ app.use(
 );
 
 app.use(cors());
-app.use("/uploads", express.static("./server/uploads"));
 app.use(express.static(path.join(__dirname, "/client/build")));
+
+app.use("/uploads", express.static("./server/uploads"));
+
+app.use(express.static("client/build"));
+
 app.use("/blogs", articles);
 //app.use("/blogs/files", fileRoutes);
 app.get("*", (req, res) => {
