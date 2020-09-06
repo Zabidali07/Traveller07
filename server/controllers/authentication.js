@@ -5,11 +5,17 @@ const _ = require("lodash");
 const Users = require("../models/authentication");
 
 var transport = nodemailer.createTransport({
-  host: "smtp.mailtrap.io",
-  port: 2525,
+  // host: "smtp.mailtrap.io",
+  // port: 2525,
+  // auth: {
+  //   user: "be223fd8c84052",
+  //   pass: "d3389db1e94241",
+  //}
+
+  service: "gmail",
   auth: {
-    user: "be223fd8c84052",
-    pass: "d3389db1e94241",
+    user: "traveller07authentication@gmail.com",
+    pass: "Traveller@123",
   },
 });
 

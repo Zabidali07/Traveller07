@@ -1,16 +1,30 @@
 const Article = require("../models/articles");
 
 const express = require("express");
+const GridFsStorage = require("multer-gridfs-storage");
 const multer = require("multer");
 const ImageSchema = require("../models/image");
 const ImageArraySchema = require("../models/imageArray");
 
 const storage = multer.diskStorage({
-  destination: "./server/uploads",
+  destination: "./client/public/uploads",
   filename: function (req, file, cb) {
     cb(null, "IMG-" + Date.now() + file.originalname);
   },
 });
+
+// const storage = new GridFsStorage({
+//   url:
+//     "mongodb://Zabid:zabid@cluster0-shard-00-00.d00bq.mongodb.net:27017,cluster0-shard-00-01.d00bq.mongodb.net:27017,cluster0-shard-00-02.d00bq.mongodb.net:27017/traveller?ssl=true&replicaSet=atlas-140inb-shard-0&authSource=admin&retryWrites=true&w=majority",
+//   file: (re, file) => {
+//     return {
+//       bucketName: "photos",
+//       filename: function (req, file, cb) {
+//         cb(null, "IMG-" + Date.now() + file.originalname);
+//       },
+//     };
+//   },
+// });
 
 const filefilter = (req, file, cb) => {
   if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {

@@ -15,7 +15,9 @@ const Signin = () => {
     password: "",
     buttonText: "Login",
   });
+
   const { buttonText, email, password } = formInputs;
+
   let tempEmail = email;
   let nameOfUser = "";
 
@@ -67,6 +69,7 @@ const Signin = () => {
             password: "",
             buttonText: "Submitted",
           });
+
           // toast.success(`Hey ${response.data.user.name}, Welcome back!`);
           // isAuth() ? {history.push("/user/dashboard")
           //            dispatch{
@@ -95,40 +98,42 @@ const Signin = () => {
   };
 
   const signinForm = () => (
-    <form>
-      <div className="form-group">
-        <label style={{ color: "#FEBE10" }}>Email</label>
-        <input
-          onChange={handleChange}
-          name="email"
-          type="email"
-          value={email}
-          className="form-control"
-        />
-      </div>
+    <div>
+      <form>
+        <div className="form-group">
+          <label style={{ color: "#FEBE10" }}>Email</label>
+          <input
+            onChange={handleChange}
+            name="email"
+            type="email"
+            value={email}
+            className="form-control"
+          />
+        </div>
 
-      <div className="form-group">
-        <label style={{ color: "#FEBE10" }}>Password</label>
-        <input
-          onChange={handleChange}
-          name="password"
-          type="password"
-          value={password}
-          className="form-control"
-        />
-      </div>
+        <div className="form-group">
+          <label style={{ color: "#FEBE10" }}>Password</label>
+          <input
+            onChange={handleChange}
+            name="password"
+            type="password"
+            value={password}
+            className="form-control"
+          />
+        </div>
 
-      <div>
-        <button
-          type="button"
-          className="btn mb-4"
-          onClick={handleSubmit}
-          style={{ background: "#8ee4af", fontWeight: "400" }}
-        >
-          {buttonText}
-        </button>
-      </div>
-    </form>
+        <div>
+          <button
+            type="button"
+            className="btn mb-4"
+            onClick={handleSubmit}
+            style={{ background: "#8ee4af", fontWeight: "400" }}
+          >
+            {buttonText}
+          </button>
+        </div>
+      </form>
+    </div>
   );
 
   return (

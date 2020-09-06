@@ -14,7 +14,7 @@ const CarouselComponent = () => {
         <div>
           <img
             src="../travel-lady-home-bg.jpg"
-            style={{ height: "400px" }}
+            style={{ height: "100vh" }}
             alt="Adventure"
           />
           <p className="legend" style={{ fontSize: "15px" }}>
@@ -24,7 +24,7 @@ const CarouselComponent = () => {
         <div>
           <img
             src="../home-bg.jpg"
-            style={{ height: "400px" }}
+            style={{ height: "100vh" }}
             alt="Adventure"
           />
           <h1 className="legend" style={{ fontSize: "15px" }}>
@@ -34,7 +34,7 @@ const CarouselComponent = () => {
         <div>
           <img
             src="../travel-landscape-home-bg.jpg"
-            style={{ height: "400px" }}
+            style={{ height: "100vh" }}
             alt="Adventure"
           />
           <h1 className="legend" style={{ fontSize: "15px" }}>

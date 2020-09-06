@@ -8,7 +8,7 @@ const articles = require("./server/routes/articles");
 const app = express();
 
 require("dotenv").config();
-const { NODE_PORT, DATABASE_URL, NODE_ENV } = process.env;
+const { NODE_PORT, DATABASE_URL, NODE_ENV, NEW_DATABASE_URL } = process.env;
 
 const PORT = process.env.PORT || NODE_PORT || 8000;
 
@@ -22,7 +22,7 @@ app.use(
 app.use(cors());
 app.use(express.static(path.join(__dirname, "/client/build"))); //neded to be changed
 
-app.use("/uploads", express.static("./server/uploads"));
+app.use("/uploads", express.static("./client/public/uploads"));
 
 app.use(express.static("client/build"));
 

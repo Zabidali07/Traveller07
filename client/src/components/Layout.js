@@ -8,14 +8,14 @@ const Layout = ({ children, match, history }) => {
   const dispatch = useDispatch();
   const isActive = (path) => {
     if (match.path === path) {
-      return { color: "#F0E68C" };
+      return { color: "#555" };
     } else {
-      return { color: "#00FFFF" };
+      return { color: "#fff" };
     }
   };
 
   const nav = () => (
-    <ul className="nav nav-tabs custom-navbar">
+    <ul className="nav nav-tabs custom-navbar-new">
       <li className="nav-item">
         <Link to="/" className="nav-link" style={isActive("/")}>
           Traveller

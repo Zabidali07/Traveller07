@@ -15,6 +15,7 @@ import MyPosts from "../components/MyPosts";
 import UpdateProfile from "../components/UpdateProfile";
 import PopUp from "../components/PopUp";
 import Fullpage from "../components/Fullpage";
+import NewSignin from "../components/NewSignin";
 
 const Routes = () => {
   return (
@@ -30,8 +31,14 @@ const Routes = () => {
         /> */}
 
         <PublicRoute path="/" exact component={Home} />
-        <PublicRoute restricted path="/signup" exact component={Signup} />
-        <PublicRoute restricted path="/signin" exact component={Signin} />
+        <PublicRoute
+          restricted
+          path="/signup"
+          exact
+          component={Signup}
+          show="true"
+        />
+        <PublicRoute restricted path="/signin" exact component={NewSignin} />
 
         <PublicRoute
           restricted
@@ -51,6 +58,7 @@ const Routes = () => {
           exact
           component={Reset}
         />
+        <PrivateRoute restricted path="/newin" exact component={NewSignin} />
         <PrivateRoute
           restricted
           path="/user/dashboard/showpopup/:userToken"

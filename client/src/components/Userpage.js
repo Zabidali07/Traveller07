@@ -39,6 +39,7 @@ const Userpage = () => {
         console.log("Success in Fetching user detail", email, res);
         let tempPath = String(res.data.result.profileImgPath);
         tempPath = "http://localhost:8000/uploads/" + tempPath.substr(15);
+        // tempPath = tempPath.substr(15);
         setpopUpdetails({
           ...popUpdetails,
           name: res.data.result.name,
@@ -132,7 +133,7 @@ const Userpage = () => {
                       <img
                         src={post.imagePath}
                         className="card-img img-fluid"
-                        alt="lol"
+                        alt={String(post.imagePath).substr(15)}
                       />
                     </div>
                     <div className="col-md-8">

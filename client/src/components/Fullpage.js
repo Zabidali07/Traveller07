@@ -124,6 +124,7 @@ const Fullpage = ({ match }) => {
                   <img
                     id="imgCard"
                     className="card-img-top img-fluid"
+                    style={{ height: "300px" }}
                     src={eachPath}
                   />{" "}
                   <div className="card-body" style={{ color: "#ee9ca7" }}>

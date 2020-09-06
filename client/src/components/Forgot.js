@@ -30,7 +30,7 @@ const Forgot = ({ history }) => {
       })
       .catch((error) => {
         console.log("FORGOT PASSWORD ERROR", error.response.data);
-        toast.error(error.response.data.error);
+        toast.error(error.response.data);
         setValues({ ...values, buttonText: BTN_LABEL });
       });
   };
