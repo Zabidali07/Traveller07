@@ -37,7 +37,7 @@ if (NODE_ENV === "production") {
 }
 
 mongoose
-  .connect(DATABASE_URL, {
+  .connect(NEW_DATABASE_URL, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
